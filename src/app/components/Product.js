@@ -43,7 +43,6 @@ function Product() {
         .then(res => res.json())
         .then(data => {
           setDataId(data);
-          console.log(data)
         })
     },[])
 

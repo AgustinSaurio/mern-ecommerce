@@ -1,6 +1,4 @@
 import axios from "axios";
-// import { PAYPAL_API, PAYPAL_CLIENT, PAYPAL_SECRET, HOST } from "../config.js"
-
 
 export const orderCreate = async (req, res) => {
     try {
@@ -46,8 +44,8 @@ export const orderCreate = async (req, res) => {
           brand_name: "ecommerce-example.com",
           landing_page: "NO_PREFERENCE",
           user_action: "PAY_NOW",
-          return_url: `${HOST}/payment/payment-order`,
-          cancel_url: `${HOST}/payment/cancel-order`,
+          return_url: `${process.env.HOST}/payment/payment-order`,
+          cancel_url: `${process.env.HOST}/payment/cancel-order`,
         },
       };
   
@@ -67,8 +65,8 @@ export const orderCreate = async (req, res) => {
             "Content-Type": "application/x-www-form-urlencoded",
           },
           auth: {
-            username: PAYPAL_CLIENT,
-            password: PAYPAL_SECRET,
+            username: process.env.PAYPAL_CLIENT,
+            password: process.env.PAYPAL_SECRET,
           },
         }
       );
@@ -77,7 +75,7 @@ export const orderCreate = async (req, res) => {
   
       // make a request
       const response = await axios.post(
-        `${PAYPAL_API}/v2/checkout/orders`,
+        `${process.env.PAYPAL_API}/v2/checkout/orders`,
         order,
         {
           headers: {
