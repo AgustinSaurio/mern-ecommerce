@@ -108,8 +108,6 @@ export const orderReady = async (req, res) => {
         }
       );
   
-      console.log(response.data);
-  
       res.redirect("/");
 
     } catch (error) {
