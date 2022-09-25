@@ -8,7 +8,6 @@ import {fileURLToPath} from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const app = express();
-import cors from 'cors'
 
 // Db connection
 connectDB();
@@ -17,7 +16,6 @@ app.set('port', process.env.PORT || 3000);
 // Middlewares
 app.use(morgan('dev'));
 app.use(express.json());
-app.use(cors())
 // Routes
 app.use('/api/products',productRoutes)
 app.use('/payment',paymentRoutes)

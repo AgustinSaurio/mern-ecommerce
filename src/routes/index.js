@@ -1,21 +1,8 @@
 import express from 'express';
 import Products from '../models/Product.js'
 const router = express.Router();
-import cors from 'cors';
 
-// let whitelist = ['https://agustinc-mern-ecommerce.herokuapp.com']
-// let corsOptions = {
-//   origin: function (origin, callback) {
-//     if (whitelist.indexOf(origin) !== -1) {
-//       callback(null, true)
-//     } else {
-//       callback(new Error('Not allowed by CORS'))
-//     }
-//   }
-// }
-
-
-router.get('/',cors(), async (req, res) => {
+router.get('/', async (req, res) => {
         try {
           const products = await Products.find();
           res.json(products)
