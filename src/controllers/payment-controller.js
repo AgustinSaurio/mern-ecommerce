@@ -102,8 +102,8 @@ export const orderReady = async (req, res) => {
         {},
         {
           auth: {
-            username: PAYPAL_CLIENT,
-            password: PAYPAL_SECRET,
+            username: process.env.PAYPAL_CLIENT,
+            password: process.env.PAYPAL_SECRET,
           },
         }
       );
