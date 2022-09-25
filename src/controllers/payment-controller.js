@@ -98,7 +98,7 @@ export const orderReady = async (req, res) => {
   
     try {
       const response = await axios.post(
-        `${PAYPAL_API}/v2/checkout/orders/${token}/capture`,
+        `${process.env.PAYPAL_API}/v2/checkout/orders/${token}/capture`,
         {},
         {
           auth: {
@@ -107,6 +107,8 @@ export const orderReady = async (req, res) => {
           },
         }
       );
+  
+      console.log(response.data);
   
       res.redirect("/");
 
