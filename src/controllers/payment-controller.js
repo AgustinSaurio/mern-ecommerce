@@ -119,5 +119,5 @@ export const orderReady = async (req, res) => {
   };
 
 export const orderCancel = (req, res) => {
-    res.redirect(process.env.HOST);
+    res.redirect("/");
 }
