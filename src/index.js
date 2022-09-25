@@ -11,14 +11,11 @@ const app = express();
 
 // Db connection
 connectDB();
-
 // Settings 
 app.set('port', process.env.PORT || 3000);
-
 // Middlewares
 app.use(morgan('dev'));
 app.use(express.json());
-
 // Routes
 app.use('/api/products',productRoutes)
 app.use('/payment',paymentRoutes)

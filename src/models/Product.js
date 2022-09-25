@@ -6,7 +6,7 @@ const ProductSchema = mongoose.Schema({
     price: Number,
     price_offer: Number,
     offer: Boolean,
-    size: [Number],
+    size: [String],
     colors: [String],
     gen: String,
     type: String,

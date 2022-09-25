@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+// import { MONGO_DB, MONGO_PASSWORD, MONGO_USER } from "./config.js"
 
 export const connectDB = async () => {
     try {
