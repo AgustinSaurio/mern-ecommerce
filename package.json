@@ -5,6 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "build": "webpack --mode production",
     "devbuild": "webpack --watch",
     "start": "node src/index.js",
     "dev": "nodemon src/index.js"
